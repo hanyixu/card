@@ -25,13 +25,15 @@
         .name-card {
             background: white;
             width: 600px;
-            height: 400px;
+            height: auto;
+            min-height: 400px;
             border: 2px solid black;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
             text-align: left;
             padding: 50px 40px 40px 40px;
+            overflow: hidden;
         }
 
         .name {
@@ -67,6 +69,9 @@
         .contact-value {
             font-weight: 300;
             color: black;
+            word-wrap: break-word;
+            word-break: break-word;
+            hyphens: auto;
         }
 
         .social-links {
@@ -88,6 +93,8 @@
         .social-value {
             font-weight: 300;
             color: black;
+            word-wrap: break-word;
+            word-break: break-word;
         }
 
         .wechat-link {
@@ -127,29 +134,105 @@
         .linkedin-link {
             color: black;
             text-decoration: none;
+            word-wrap: break-word;
+            word-break: break-word;
         }
 
         .linkedin-link:hover {
             text-decoration: underline;
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 650px) {
             .name-card {
-                width: 90%;
-                padding: 30px 25px;
+                width: 100%;
+                max-width: 500px;
+                height: auto;
+                min-height: 400px;
+                padding: 25px 20px;
+                justify-content: center;
             }
             
             .name {
-                font-size: 32px;
+                font-size: 24px;
+                line-height: 1.2;
             }
             
             .title {
-                font-size: 18px;
+                font-size: 14px;
+                margin-bottom: 15px;
+                line-height: 1.3;
             }
             
             .contact-item,
             .social-item {
-                font-size: 16px;
+                font-size: 13px;
+                margin-bottom: 8px;
+            }
+            
+            .contact-value,
+            .social-value {
+                line-height: 1.4;
+            }
+            
+            .wechat-qr {
+                left: 0;
+                transform: none;
+            }
+            
+            .wechat-qr img {
+                width: 150px;
+                height: 150px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            .name-card {
+                width: 100%;
+                padding: 20px 15px;
+                border-width: 1px;
+                justify-content: center;
+            }
+            
+            .name {
+                font-size: 22px;
+            }
+            
+            .title {
+                font-size: 13px;
+            }
+            
+            .contact-item,
+            .social-item {
+                font-size: 12px;
+                margin-bottom: 6px;
+            }
+            
+            .contact-label,
+            .social-label {
+                margin-bottom: 1px;
+            }
+            
+            .social-links {
+                margin-top: 8px;
+            }
+        }
+
+        @media (max-width: 350px) {
+            .name {
+                font-size: 20px;
+            }
+            
+            .title {
+                font-size: 12px;
+            }
+            
+            .contact-item,
+            .social-item {
+                font-size: 11px;
             }
         }
     </style>
@@ -162,11 +245,11 @@
         <div class="contact-info">
             <div class="contact-item">
                 <span class="contact-label">Email</span>
-                <span class="contact-value">hx2400@columbia.edu</span>
+                <span class="contact-value">hx2400 [at] columbia [dot] edu</span>
             </div>
             <div class="contact-item">
                 <span class="contact-label">Phone</span>
-                <span class="contact-value">+1 (315) 640-9091</span>
+                <span class="contact-value">31 56 40 90 91</span>
             </div>
             <div class="contact-item">
                 <span class="contact-label">Address</span>
@@ -175,6 +258,14 @@
         </div>
         
         <div class="social-links">
+            <div class="social-item">
+                <span class="social-label">Website</span>
+                <span class="social-value">
+                    <a href="https://hanyixu.com" target="_blank" class="linkedin-link">
+                        https://hanyixu.com
+                    </a>
+                </span>
+            </div>
             <div class="social-item">
                 <span class="social-label">LinkedIn</span>
                 <span class="social-value">
